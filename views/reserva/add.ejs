@@ -1,0 +1,46 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Adicionar Reserva</h1>
+    <div>
+        <a href="/reserva/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <label>Hóspede:</label>
+            <select name="hospede" id="hospede">
+                <option value="">selecione</option>
+                <%Hospedes.forEach(function(hospede){%>
+                    <option value='<%=hospede.id%>'><%=hospede.nome%></option>
+                <%})%>
+            </select><br>
+            <label>Quarto:</label>
+            <select name="quarto" id="quarto">
+                <option value="">selecione</option>
+                <%Quartos.forEach(function(quarto){%>
+                    <option value='<%=quarto.id%>'>Nº <%=quarto.numero%></option>
+                <%})%>
+            </select><br>
+            <label>Funcionário responsável:</label>
+            <select name="funcionario" id="funcionario">
+                <option value="">selecione</option>
+                <%Funcionarios.forEach(function(funcionario){%>
+                    <option value='<%=funcionario.id%>'><%=funcionario.nome%></option>
+                <%})%>
+            </select><br>
+            <label>Tipo de Quarto:</label>
+            <select name="tipoQuarto" id="tipoQuarto">
+                <option value="Comum">Comum</option>
+                <option value="Luxo">Luxo</option>
+                <option value="Suíte">Suíte</option>
+            </select><br>
+            <label>Data de Entrada:</label>
+            <input type="date" name="dataEntrada" required><br>
+            <label>Data de Saída:</label>
+            <input type="date" name="dataSaida" required><br>
+            <label>Foto:</label>
+            <input type="file" id="foto" name="foto" required><br>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

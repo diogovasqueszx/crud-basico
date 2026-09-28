@@ -1,0 +1,25 @@
+﻿<%-include('../cabecalho.ejs')%>
+    <h1>Editar Quarto</h1>
+    <div>
+        <a href="/quarto/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="id" value="<%=Quarto.id%>"><br>
+            <label>Número:</label>
+            <input type="number" name="numero" value="<%=Quarto.numero%>" required><br>
+            <label>Andar:</label>
+            <input type="number" name="andar" value="<%=Quarto.andar%>" required><br>
+            <label>Status:</label>
+            <input type="text" name="status" value="<%=Quarto.status%>" required><br>
+            <label>Hotel:</label>
+            <input type="text" name="hotel" value="<%=Quarto.hotel%>" required><br>
+            <label>Tipo de Quarto:</label>
+            <input type="text" name="tipoQuarto" value="<%=Quarto.tipoQuarto%>" required><br>
+            <button type="submit">Salvar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

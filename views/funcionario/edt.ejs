@@ -1,0 +1,22 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Editar Funcionário</h1>
+    <div>
+        <a href="/funcionario/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Funcionario.nome%>" required><br>
+            <label>CPF:</label>
+            <input type="text" name="cpf" value="<%=Funcionario.cpf%>" required><br>
+            <label>Cargo:</label>
+            <input type="text" name="cargo" value="<%=Funcionario.cargo%>" required><br>
+            <label>Telefone:</label>
+            <input type="text" name="telefone" value="<%=Funcionario.telefone%>" required><br>
+            <button type="submit">Salvar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

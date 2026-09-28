@@ -1,0 +1,23 @@
+﻿<%-include('../cabecalho.ejs')%>
+    <h1>Adicionar Quarto</h1>
+    <div>
+        <a href="/quarto/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+            <label>Número:</label>
+            <input type="number" name="numero" required><br>
+            <label>Andar:</label>
+            <input type="number" name="andar" required><br>
+            <label>Status:</label>
+            <input type="text" name="status" required><br>
+            <label>Hotel:</label>
+            <input type="text" name="hotel" required><br>
+            <label>Tipo de Quarto:</label>
+            <input type="text" name="tipoQuarto" required><br>
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

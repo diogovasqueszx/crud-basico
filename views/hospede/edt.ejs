@@ -1,0 +1,23 @@
+﻿<%-include('../cabecalho.ejs')%>
+    <h1>Editar Hóspede</h1>
+    <div>
+        <a href="/hospede/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="id" value="<%=Hospede.id%>"><br>
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Hospede.nome%>" required><br>
+            <label>CPF:</label>
+            <input type="text" name="cpf" value="<%=Hospede.cpf%>" required><br>
+            <label>Telefone:</label>
+            <input type="text" name="telefone" value="<%=Hospede.telefone%>" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" value="<%=Hospede.email%>" required><br>
+            <button type="submit">Salvar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

@@ -1,0 +1,37 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Reservas</h1>
+    <div>
+        <form action="/reserva/lst" method="post">
+            <input type="text" name="filtro" id="" placeholder="digite o tipo de quarto">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <a href="/reserva/add">+ Reserva</a>
+    <table>
+        <tr>
+            <td>Hóspede</td>
+            <td>Quarto</td>
+            <td>Funcionário</td>
+            <td>Tipo</td>
+            <td>Entrada</td>
+            <td>Saída</td>
+            <td>Foto</td>
+            <td>Ações</td>
+        </tr>
+
+        <%for (const {id, hospede, quarto, funcionario, tipoQuarto, dataEntrada, dataSaida, foto} of Reservas) {%>
+            <tr>
+                <td><%=hospede ? hospede.nome : ''%></td>
+                <td><%=quarto ? quarto.numero : ''%></td>
+                <td><%=funcionario ? funcionario.nome : ''%></td>
+                <td><%=tipoQuarto%></td>
+                <td><%=dataEntrada.toLocaleDateString('pt-BR')%></td>
+                <td><%=dataSaida.toLocaleDateString('pt-BR')%></td>
+                <td><% if(foto){ %><img src="<%=foto%>" width="80" height="80"><% } %></td>
+                <td><a href="/reserva/edt/<%=id%>">Editar</a>
+                    <a href="/reserva/del/<%=id%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <%-include('../rodape.ejs')%>
